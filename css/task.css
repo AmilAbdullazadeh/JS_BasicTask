@@ -1,0 +1,12 @@
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+}
+
+td {
+    width: 55px;
+    font-size: 55px;
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    function createImg(x, y, symbol) {
+        const box = document.getElementById('box');
+        box.innerHTML = ''
+        const arr = new Array(y);
+        for (let a = 0; a < y; a++) {
+            arr[a] = new Array(x)
+            for (let b = 0; b < x; b++) {
+                if (a === 0 || a === (y - 1)) {
+                    arr[a][b] = symbol
+                } else if (b === 0 || b === (x - 1)) {
+                    arr[a][b] = symbol
+                } else {
+                    arr[a][b] = ' '
+                }
+            }
+        }
+        const table = document.createElement('table')
+        arr.map(item => {
+            const tr = document.createElement('tr');
+            item.map(a => {
+                const td = document.createElement('td');
+                td.append(a)
+                tr.append(td)
+            })
+            table.append(tr)
+        })
+        box.append(table)
+    }
+
+    createImg(13, 13, '*')
+</script>
+</body>
+</html>
